@@ -7,6 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="usuarios")
@@ -17,9 +20,18 @@ public class Usuario implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
-    private String nombre;
+    
+	@NotEmpty
+	private String nombre;
+	
+	@NotEmpty
     private String apellido;
+	
+	@NotEmpty
+	@Email
     private String correo;
+    
+    @NotNull
     private Integer codigo;
      
 	public Usuario() {

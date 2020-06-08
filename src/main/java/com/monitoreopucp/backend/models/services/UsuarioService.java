@@ -8,10 +8,10 @@ public interface UsuarioService {
 	
 	public List<Usuario> findAll();
 	
-	public void save(Usuario cliente);
+	public void save(Usuario usuario);
 	
 	public Usuario findById(Integer id);
 	
-	public void delete(Usuario cliente);
+	public void delete(Usuario usuario);
 
 }
